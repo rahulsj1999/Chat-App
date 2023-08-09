@@ -1,10 +1,10 @@
 import 'package:chat_app/screens/auth/login_screen.dart';
 import 'package:chat_app/screens/home_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../main.dart';
+import '../api/apis.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -20,9 +20,9 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(const Duration(milliseconds: 2000), () {
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
       SystemChrome.setSystemUIOverlayStyle(
-          const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+          const SystemUiOverlayStyle(statusBarColor: Colors.white));
 
-      if (FirebaseAuth.instance.currentUser != null) {
+      if (APIs.auth.currentUser != null) {
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (_) => const HomeScreen()));
       } else {
