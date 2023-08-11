@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:math';
 
 import 'package:chat_app/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -108,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     text: const TextSpan(
                         style: TextStyle(color: Colors.black, fontSize: 16),
                         children: [
-                          TextSpan(text: 'Login with'),
+                          TextSpan(text: 'Login with '),
                           TextSpan(
                               text: 'Google',
                               style: TextStyle(fontWeight: FontWeight.w500))
